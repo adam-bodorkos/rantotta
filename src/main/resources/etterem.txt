@@ -1,3 +1,4 @@
 Etterem
 M1,Pizza,700
 M2,Hot dog,500
+M3,Hiba
