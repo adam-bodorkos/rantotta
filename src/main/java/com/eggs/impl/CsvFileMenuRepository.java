@@ -52,7 +52,7 @@ public class CsvFileMenuRepository
 				{
 					String[] food = s.split(",");
 					if(food.length == 3)
-						menu.food(food[0], food[1], Float.parseFloat(food[2]));
+						menu.food(food[0].trim(), food[1].trim(), Float.parseFloat(food[2].trim()));
 				}
 				++i;
 			}
