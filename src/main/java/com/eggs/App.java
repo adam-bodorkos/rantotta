@@ -5,7 +5,7 @@ import com.eggs.impl.CsvFileMenuRepository;
 
 public class App {
 	public static void main(String[] args) {
-		MenuRepository repo = new CsvFileMenuRepository("karcsi.txt", "etterem.txt");
+		MenuRepository repo = new CsvFileMenuRepository("karcsi.txt", "etterem.txt", "nemletezik.txt");
 		ConsoleMenuPrinter printer = new ConsoleMenuPrinter(repo);
 		
 	    printer.printMenus();

@@ -35,7 +35,13 @@ public class CsvFileMenuRepository
 		try
 		{
 			InputStream is = this.getClass().getClassLoader().getResourceAsStream(path);
-			br = new BufferedReader(new InputStreamReader(is));
+			if(is == null)
+			{
+				logger.debug("File not found: " + path);
+				return null;
+			}
+			else
+				br = new BufferedReader(new InputStreamReader(is));
 			
 			String s;
 			int i = 0;
