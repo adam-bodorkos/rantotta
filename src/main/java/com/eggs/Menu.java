@@ -15,7 +15,7 @@ public class Menu {
 		this.restaurant = restaurant;
 	}
 	public List<Food> getFoodList() {
-		ArrayList list = new ArrayList(foodMap.values());
+		ArrayList<Food> list = new ArrayList<Food>(foodMap.values());
 		return list;
 	}
 	public void setFoodMap(Map<String, Food> foodMap) {
