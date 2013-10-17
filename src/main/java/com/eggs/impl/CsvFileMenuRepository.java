@@ -12,6 +12,8 @@ import com.eggs.Menu;
 import com.eggs.MenuBuilder;
 import com.eggs.MenuRepository;
 
+import org.slf4j.*;
+
 public class CsvFileMenuRepository
 	implements MenuRepository
 {
@@ -25,6 +27,8 @@ public class CsvFileMenuRepository
 	private Menu getMenu(String path)
 	{
 		MenuBuilder menu = MenuBuilder.menu();
+		
+		Logger logger = LoggerFactory.getLogger(this.getClass());
 		
 		BufferedReader br = null;
 		
@@ -49,11 +53,12 @@ public class CsvFileMenuRepository
 		}
 		catch (FileNotFoundException e)
 		{
+			logger.error("FileNotFoundException while opening file: " + path);
 			return null;
 		}
 		catch (IOException e)
 		{
-			e.printStackTrace();
+			logger.error("IOException while reading file: " + path);
 		}
 		finally
 		{
@@ -64,7 +69,7 @@ public class CsvFileMenuRepository
 				}
 				catch (IOException e)
 				{
-					e.printStackTrace();
+					logger.error("IOException while closing BufferedReader.");
 				}
 		}
 		
